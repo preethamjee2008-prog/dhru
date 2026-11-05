@@ -1,0 +1,97 @@
+{
+  "users": {
+    "active-trader": {
+      "credits": 0,
+      "tradingBalance": 0,
+      "totalCreditsPurchased": 0,
+      "premiumUnlocked": false,
+      "history": [
+        {
+          "id": "tx-1793899825864",
+          "type": "REPORT_CONSUME",
+          "credits": -5,
+          "symbol": "ETH-USD",
+          "at": "2026-11-05T17:30:25.864Z"
+        },
+        {
+          "id": "tx-1793890921538",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "DOGE-USD",
+          "at": "2026-11-05T15:02:01.538Z"
+        },
+        {
+          "id": "tx-1793890919302",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "AVAX-USD",
+          "at": "2026-11-05T15:01:59.302Z"
+        },
+        {
+          "id": "tx-1793890916834",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "XRP-USD",
+          "at": "2026-11-05T15:01:56.834Z"
+        },
+        {
+          "id": "tx-1793890915570",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "SOL-USD",
+          "at": "2026-11-05T15:01:55.570Z"
+        },
+        {
+          "id": "tx-1793890913642",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "ETH-USD",
+          "at": "2026-11-05T15:01:53.642Z"
+        },
+        {
+          "id": "tx-1793890911931",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "BTC-USD",
+          "at": "2026-11-05T15:01:51.931Z"
+        },
+        {
+          "id": "tx-1793888776333",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "FET-USD",
+          "at": "2026-11-05T14:26:16.333Z"
+        },
+        {
+          "id": "tx-1793888762558",
+          "type": "AUTOTRADE_CONSUME",
+          "credits": -10,
+          "symbol": "APT-USD",
+          "at": "2026-11-05T14:26:02.558Z"
+        },
+        {
+          "id": "tx-1793887189832",
+          "type": "REPORT_CONSUME",
+          "credits": -5,
+          "symbol": "ETH-USD",
+          "at": "2026-11-05T13:59:49.832Z"
+        },
+        {
+          "id": "tx-1793887016221",
+          "type": "REPORT_CONSUME",
+          "credits": -5,
+          "symbol": "RELIANCE.NS",
+          "at": "2026-11-05T13:56:56.221Z"
+        },
+        {
+          "id": "tx-1793886978855",
+          "type": "REPORT_CONSUME",
+          "credits": -5,
+          "symbol": "RELIANCE.NS",
+          "at": "2026-11-05T13:56:18.855Z"
+        }
+      ]
+    }
+  },
+  "orders": {}
+}

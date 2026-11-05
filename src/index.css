@@ -1,0 +1,108 @@
+@font-face {
+  font-family: Geist;
+  src: url('/fonts/Geist-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F3F8FB; --surface-3:#E8F2F7;
+  --border:#DCE7EE; --border-strong:#C5D5E0;
+  --text:#0F172A; --text-2:#334155; --text-3:#5F7180; --text-disabled:#64748B;
+  --primary:#38BDF8; --primary-hover:#7DD3FC; --primary-fill:#2563EB; --primary-fill-hover:#1D4ED8; --on-primary:#FFFFFF; --brand-text:#0369A1; --primary-tint:rgb(14 165 233 / 13%); --focus:#0284C7;
+  --pos:#15803D; --pos-fill:#15803D; --pos-chart:#22C55E; --pos-tint:rgb(34 197 94 / 15%); --neg:#B91C1C; --neg-fill:#B91C1C; --neg-chart:#EF4444; --neg-tint:rgb(239 68 68 / 15%);
+  --neutral:#64748B; --neutral-tint:rgb(148 163 184 / 15%); --risk-low:#15803D; --risk-moderate:#A16207; --risk-high:#C2410C; --risk-very-high:#B91C1C;
+  --warn:#0369A1; --warn-tint:rgb(14 165 233 / 13%); --info:#0369A1; --info-chart:#0284C7; --info-tint:rgb(14 165 233 / 13%);
+  --ai:#6D5AE0; --ai-tint:rgb(124 108 242 / 15%); --highlight:#0284C7; --on-highlight:#FFFFFF;
+  --tooltip-bg:#0F172A; --tooltip-text:#FFFFFF; --overlay:rgb(3 7 18 / 60%);
+  --shadow-overlay:0 12px 28px rgb(15 23 42 / 12%);
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
+  --radius-badge:4px; --radius-control:6px; --radius-panel:8px; --radius-sheet:12px;
+  --duration-fast:120ms; --duration-micro:80ms; --duration-base:200ms; --duration-panel:280ms;
+  --ease-out:cubic-bezier(.2, 0, 0, 1);
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg:#070B14; --surface:#0C1322; --surface-2:#111B2D; --surface-3:#17243C;
+  --border:#1A273F; --border-strong:#243554;
+  --text:#F1F5F9; --text-2:#94A3B8; --text-3:#64748B; --text-disabled:#64748B;
+  --primary:#38BDF8; --primary-hover:#7DD3FC; --primary-fill:#2563EB; --primary-fill-hover:#1D4ED8; --on-primary:#FFFFFF; --brand-text:#38BDF8; --primary-tint:rgb(56 189 248 / 15%); --focus:#38BDF8;
+  --pos:#22C55E; --pos-fill:#15803D; --pos-chart:#22C55E; --pos-tint:rgb(34 197 94 / 15%); --neg:#EF4444; --neg-fill:#B91C1C; --neg-chart:#EF4444; --neg-tint:rgb(239 68 68 / 15%);
+  --neutral:#94A3B8; --neutral-tint:rgb(148 163 184 / 15%); --risk-low:#22C55E; --risk-moderate:#EAB308; --risk-high:#F97316; --risk-very-high:#DC2626;
+  --warn:#38BDF8; --warn-tint:rgb(56 189 248 / 15%); --info:#38BDF8; --info-chart:#38BDF8; --info-tint:rgb(56 189 248 / 15%);
+  --ai:#9B8CFF; --ai-tint:rgb(124 108 242 / 18%); --highlight:#38BDF8; --on-highlight:#04111D;
+  --tooltip-bg:#F1F5F9; --tooltip-text:#070B14; --overlay:rgb(0 0 0 / 74%);
+  --shadow-overlay:0 12px 28px rgb(0 0 0 / 28%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { min-height:100%; background:var(--bg); color:var(--text); scroll-behavior:auto; -webkit-font-smoothing:antialiased; }
+  body { min-height:100%; overflow-x:hidden; background:var(--bg); color:var(--text); font-family:Geist,system-ui,sans-serif; font-size:13px; line-height:1.4; font-variant-numeric:tabular-nums; }
+  button, input, select, textarea { border-radius:var(--radius-control); }
+  button, a, input, select, textarea { transition-property:color,background-color,border-color,opacity,transform; transition-duration:var(--duration-fast); transition-timing-function:var(--ease-out); }
+  button:not(:disabled):active { transform:scale(.98); transition-duration:var(--duration-micro); }
+  button:disabled, button[aria-disabled="true"] { cursor:not-allowed; }
+  :focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+  input, select, textarea { border-color:var(--border-strong); background:var(--surface); color:var(--text); }
+  ::selection { background:var(--primary-tint); color:var(--text); }
+}
+
+html, body, #root { min-height:100%; background-color:var(--bg); color:var(--text); }
+
+@keyframes market-tick-up {
+  0% { background-color: rgb(34 197 94 / 28%); }
+  100% { background-color: transparent; }
+}
+@keyframes market-tick-down {
+  0% { background-color: rgb(239 68 68 / 28%); }
+  100% { background-color: transparent; }
+}
+.flash-up { animation: market-tick-up 700ms ease-out both; }
+.flash-down { animation: market-tick-down 700ms ease-out both; }
+.bg-brand-fill.text-brand,
+html.dark [class~="dark:bg-brand-fill"][class~="dark:text-brand"] { color:var(--on-primary)!important; }
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Cross-browser scrollbar hiding for slick trading strips */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+.mask-fade-edges {
+  mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flash-up, .flash-down { animation-duration: 1ms; }
+  .animate-marquee { animation: none; overflow-x: auto; }
+}
